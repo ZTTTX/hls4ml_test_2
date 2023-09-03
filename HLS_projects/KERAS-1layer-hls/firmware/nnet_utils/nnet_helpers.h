@@ -26,6 +26,8 @@
 #include <fstream>
 #include "hls_stream.h"
 
+#include <algorithm>
+
 namespace nnet {
 
 #ifndef __SYNTHESIS__
@@ -169,7 +171,7 @@ void  hls_stream_debug(hls::stream<data_T> &data, hls::stream<data_T> &res)
     data_T datareg;
     for (int ii=0; ii<N_IN; ii++) {
         datareg = data.read();
-        std::cout << "[" << ii << "]: " << datareg << std::endl;
+        std::cerr << "[" << ii << "]: " << datareg << std::endl;
         res << datareg;
     }
 }

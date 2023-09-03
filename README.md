@@ -4,3 +4,7 @@ export PLATFORM_REPO_PATHS=/opt/xilinx/platforms
 export LIBRARY_PATH=/usr/lib/x86_64-linux-gnu:$LIBRARY_PATH
 
 vitis_hls -f run_hls.tcl
+
+./auto_test.sh
+
+vivado -mode batch -source vivado_power.tcl

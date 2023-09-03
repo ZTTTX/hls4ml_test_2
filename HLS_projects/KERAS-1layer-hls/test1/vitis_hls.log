@@ -1,0 +1,22 @@
+
+****** Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.2 (64-bit)
+  **** SW Build 3670227 on Oct 13 2022
+  **** IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+source /opt/xilinx/vitis/v2022p2/Vitis_HLS/2022.2/scripts/vitis_hls/hls.tcl -notrace
+INFO: [HLS 200-10] Running '/opt/xilinx/vitis/v2022p2/Vitis_HLS/2022.2/bin/unwrapped/lnx64.o/vitis_hls'
+INFO: [HLS 200-10] For user 'tz32' on host 'xacc-head-000-5.csl.illinois.edu' (Linux_x86_64 version 4.15.0-208-generic) on Sun Sep 03 14:28:01 CDT 2023
+INFO: [HLS 200-10] On os Ubuntu 18.04.6 LTS
+INFO: [HLS 200-10] In directory '/mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/test1'
+Sourcing Tcl script 'run_hls.tcl'
+INFO: [HLS 200-1510] Running: open_project -reset conv2d_project.prj 
+INFO: [HLS 200-10] Opening and resetting project '/mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/test1/conv2d_project.prj'.
+INFO: [HLS 200-1510] Running: add_files /mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/test1/uut_top.cpp -cflags -fpermissive -std=c++11 -I/mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/firmware/nnet_utils 
+INFO: [HLS 200-10] Adding design file '/mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/test1/uut_top.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb /mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/test1/testbench.cpp -cflags -fpermissive -std=c++11 -I/mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/firmware/nnet_utils 
+INFO: [HLS 200-10] Adding test bench file '/mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/test1/testbench.cpp' to the project
+INFO: [HLS 200-1510] Running: set_top uut_top 
+INFO: [HLS 200-1510] Running: open_solution -reset sol 
+INFO: [HLS 200-10] Creating and opening solution '/mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/test1/conv2d_project.prj/sol'.
+INFO: [HLS 200-10] Cleaning up the solution database.
