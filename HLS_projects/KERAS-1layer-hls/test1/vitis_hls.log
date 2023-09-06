@@ -6,7 +6,7 @@
 
 source /opt/xilinx/vitis/v2022p2/Vitis_HLS/2022.2/scripts/vitis_hls/hls.tcl -notrace
 INFO: [HLS 200-10] Running '/opt/xilinx/vitis/v2022p2/Vitis_HLS/2022.2/bin/unwrapped/lnx64.o/vitis_hls'
-INFO: [HLS 200-10] For user 'tz32' on host 'xacc-head-000-5.csl.illinois.edu' (Linux_x86_64 version 4.15.0-208-generic) on Sun Sep 03 14:28:01 CDT 2023
+INFO: [HLS 200-10] For user 'tz32' on host 'xacc-head-000-5.csl.illinois.edu' (Linux_x86_64 version 4.15.0-208-generic) on Tue Sep 05 14:29:48 CDT 2023
 INFO: [HLS 200-10] On os Ubuntu 18.04.6 LTS
 INFO: [HLS 200-10] In directory '/mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/test1'
 Sourcing Tcl script 'run_hls.tcl'
@@ -20,3 +20,95 @@ INFO: [HLS 200-1510] Running: set_top uut_top
 INFO: [HLS 200-1510] Running: open_solution -reset sol 
 INFO: [HLS 200-10] Creating and opening solution '/mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/test1/conv2d_project.prj/sol'.
 INFO: [HLS 200-10] Cleaning up the solution database.
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-1505.html
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vivado' configuration: config_interface -m_axi_latency=0
+INFO: [HLS 200-1510] Running: set_part xcu280-fsvh2892-2L-e 
+INFO: [HLS 200-1611] Setting target device to 'xcu280-fsvh2892-2L-e'
+INFO: [HLS 200-1510] Running: create_clock -period 3.3333 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 3.333ns.
+INFO: [HLS 200-1510] Running: csim_design -argv /mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/test1/data/ 
+Running Dispatch Server on port: 40623
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+   Compiling ../../../../testbench.cpp in debug mode
+   Compiling ../../../../uut_top.cpp in debug mode
+   Generating csim.exe
+Output:
+7.09138 9.19658 8.82654 8.06883 8.32353 9.07839 9.13215 8.53294 7.76 9.25901 
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 2.2 seconds. CPU system time: 1.14 seconds. Elapsed time: 3.31 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 1.070 GB.
+INFO: [HLS 200-10] Analyzing design file '/mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/test1/uut_top.cpp' ... 
+WARNING: [HLS 207-5555] unexpected pragma argument 'mul', expects function/operation (/mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/firmware/nnet_utils/nnet_conv2d.h:126:34)
+WARNING: [HLS 207-5555] unexpected pragma argument 'mul', expects function/operation (/mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/firmware/nnet_utils/nnet_conv2d.h:242:34)
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 5.71 seconds. CPU system time: 1.52 seconds. Elapsed time: 7.24 seconds; current allocated memory: 1.073 GB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_323_4' is marked as complete unroll implied by the pipeline pragma (/mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/firmware/nnet_utils/nnet_conv2d.h:323:23)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_324_5' is marked as complete unroll implied by the pipeline pragma (/mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/firmware/nnet_utils/nnet_conv2d.h:324:27)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_325_6' is marked as complete unroll implied by the pipeline pragma (/mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/firmware/nnet_utils/nnet_conv2d.h:325:33)
+INFO: [HLS 214-291] Loop 'AccumOutHeight' is marked as complete unroll implied by the pipeline pragma (/mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/firmware/nnet_utils/nnet_conv2d.h:295:21)
+INFO: [HLS 214-291] Loop 'AccumOutWidth' is marked as complete unroll implied by the pipeline pragma (/mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/firmware/nnet_utils/nnet_conv2d.h:296:24)
+INFO: [HLS 214-291] Loop 'AccumFilt' is marked as complete unroll implied by the pipeline pragma (/mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/firmware/nnet_utils/nnet_conv2d.h:297:24)
+INFO: [HLS 214-291] Loop 'AccumChan' is marked as complete unroll implied by the pipeline pragma (/mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/firmware/nnet_utils/nnet_conv2d.h:299:28)
+INFO: [HLS 214-291] Loop 'AccumDotHeight' is marked as complete unroll implied by the pipeline pragma (/mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/firmware/nnet_utils/nnet_conv2d.h:300:37)
+INFO: [HLS 214-291] Loop 'AccumDotWidth' is marked as complete unroll implied by the pipeline pragma (/mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/firmware/nnet_utils/nnet_conv2d.h:301:40)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_285_1' is marked as complete unroll implied by the pipeline pragma (/mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/firmware/nnet_utils/nnet_conv2d.h:285:23)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_286_2' is marked as complete unroll implied by the pipeline pragma (/mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/firmware/nnet_utils/nnet_conv2d.h:286:27)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_287_3' is marked as complete unroll implied by the pipeline pragma (/mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/firmware/nnet_utils/nnet_conv2d.h:287:31)
+INFO: [HLS 214-291] Loop 'ConvOutHeight' is marked as complete unroll implied by the pipeline pragma (/mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/firmware/nnet_utils/nnet_conv2d.h:245:17)
+INFO: [HLS 214-291] Loop 'ConvOutWidth' is marked as complete unroll implied by the pipeline pragma (/mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/firmware/nnet_utils/nnet_conv2d.h:246:23)
+INFO: [HLS 214-291] Loop 'ConvFilt' is marked as complete unroll implied by the pipeline pragma (/mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/firmware/nnet_utils/nnet_conv2d.h:247:23)
+INFO: [HLS 214-291] Loop 'ConvChan' is marked as complete unroll implied by the pipeline pragma (/mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/firmware/nnet_utils/nnet_conv2d.h:248:27)
+INFO: [HLS 214-291] Loop 'ConvFiltHeight' is marked as complete unroll implied by the pipeline pragma (/mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/firmware/nnet_utils/nnet_conv2d.h:249:37)
+INFO: [HLS 214-291] Loop 'ConvFiltWidth' is marked as complete unroll implied by the pipeline pragma (/mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/firmware/nnet_utils/nnet_conv2d.h:250:40)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_323_4' (/mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/firmware/nnet_utils/nnet_conv2d.h:323:23) in function 'nnet::conv_2d_latency_cl<float, float, t_config>' completely with a factor of 10 (/mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/firmware/nnet_utils/nnet_conv2d.h:225:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_324_5' (/mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/firmware/nnet_utils/nnet_conv2d.h:324:27) in function 'nnet::conv_2d_latency_cl<float, float, t_config>' completely with a factor of 10 (/mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/firmware/nnet_utils/nnet_conv2d.h:225:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_325_6' (/mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/firmware/nnet_utils/nnet_conv2d.h:325:33) in function 'nnet::conv_2d_latency_cl<float, float, t_config>' completely with a factor of 4 (/mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/firmware/nnet_utils/nnet_conv2d.h:225:0)
+INFO: [HLS 214-186] Unrolling loop 'AccumOutHeight' (/mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/firmware/nnet_utils/nnet_conv2d.h:295:21) in function 'nnet::conv_2d_latency_cl<float, float, t_config>' completely with a factor of 10 (/mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/firmware/nnet_utils/nnet_conv2d.h:225:0)
+INFO: [HLS 214-186] Unrolling loop 'AccumOutWidth' (/mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/firmware/nnet_utils/nnet_conv2d.h:296:24) in function 'nnet::conv_2d_latency_cl<float, float, t_config>' completely with a factor of 10 (/mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/firmware/nnet_utils/nnet_conv2d.h:225:0)
+INFO: [HLS 214-186] Unrolling loop 'AccumFilt' (/mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/firmware/nnet_utils/nnet_conv2d.h:297:24) in function 'nnet::conv_2d_latency_cl<float, float, t_config>' completely with a factor of 4 (/mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/firmware/nnet_utils/nnet_conv2d.h:225:0)
+INFO: [HLS 214-186] Unrolling loop 'AccumChan' (/mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/firmware/nnet_utils/nnet_conv2d.h:299:28) in function 'nnet::conv_2d_latency_cl<float, float, t_config>' completely with a factor of 2 (/mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/firmware/nnet_utils/nnet_conv2d.h:225:0)
+INFO: [HLS 214-186] Unrolling loop 'AccumDotHeight' (/mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/firmware/nnet_utils/nnet_conv2d.h:300:37) in function 'nnet::conv_2d_latency_cl<float, float, t_config>' completely with a factor of 4 (/mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/firmware/nnet_utils/nnet_conv2d.h:225:0)
+INFO: [HLS 214-186] Unrolling loop 'AccumDotWidth' (/mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/firmware/nnet_utils/nnet_conv2d.h:301:40) in function 'nnet::conv_2d_latency_cl<float, float, t_config>' completely with a factor of 4 (/mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/firmware/nnet_utils/nnet_conv2d.h:225:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_285_1' (/mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/firmware/nnet_utils/nnet_conv2d.h:285:23) in function 'nnet::conv_2d_latency_cl<float, float, t_config>' completely with a factor of 10 (/mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/firmware/nnet_utils/nnet_conv2d.h:225:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_286_2' (/mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/firmware/nnet_utils/nnet_conv2d.h:286:27) in function 'nnet::conv_2d_latency_cl<float, float, t_config>' completely with a factor of 10 (/mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/firmware/nnet_utils/nnet_conv2d.h:225:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_287_3' (/mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/firmware/nnet_utils/nnet_conv2d.h:287:31) in function 'nnet::conv_2d_latency_cl<float, float, t_config>' completely with a factor of 4 (/mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/firmware/nnet_utils/nnet_conv2d.h:225:0)
+INFO: [HLS 214-186] Unrolling loop 'ConvOutHeight' (/mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/firmware/nnet_utils/nnet_conv2d.h:245:17) in function 'nnet::conv_2d_latency_cl<float, float, t_config>' completely with a factor of 10 (/mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/firmware/nnet_utils/nnet_conv2d.h:225:0)
+INFO: [HLS 214-186] Unrolling loop 'ConvOutWidth' (/mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/firmware/nnet_utils/nnet_conv2d.h:246:23) in function 'nnet::conv_2d_latency_cl<float, float, t_config>' completely with a factor of 10 (/mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/firmware/nnet_utils/nnet_conv2d.h:225:0)
+INFO: [HLS 214-186] Unrolling loop 'ConvFilt' (/mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/firmware/nnet_utils/nnet_conv2d.h:247:23) in function 'nnet::conv_2d_latency_cl<float, float, t_config>' completely with a factor of 4 (/mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/firmware/nnet_utils/nnet_conv2d.h:225:0)
+INFO: [HLS 214-186] Unrolling loop 'ConvChan' (/mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/firmware/nnet_utils/nnet_conv2d.h:248:27) in function 'nnet::conv_2d_latency_cl<float, float, t_config>' completely with a factor of 2 (/mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/firmware/nnet_utils/nnet_conv2d.h:225:0)
+INFO: [HLS 214-186] Unrolling loop 'ConvFiltHeight' (/mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/firmware/nnet_utils/nnet_conv2d.h:249:37) in function 'nnet::conv_2d_latency_cl<float, float, t_config>' completely with a factor of 4 (/mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/firmware/nnet_utils/nnet_conv2d.h:225:0)
+INFO: [HLS 214-186] Unrolling loop 'ConvFiltWidth' (/mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/firmware/nnet_utils/nnet_conv2d.h:250:40) in function 'nnet::conv_2d_latency_cl<float, float, t_config>' completely with a factor of 4 (/mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/firmware/nnet_utils/nnet_conv2d.h:225:0)
+INFO: [HLS 214-367] Instantiating function 'void nnet::conv_2d_latency_cl<float, float, t_config>(float*, float*, t_config::weight_t*, t_config::bias_t*)' to 'void nnet::conv_2d_latency_cl<float, float, t_config>(float*, float*, t_config::weight_t*, t_config::bias_t*)' by setting 'weights' to 'weights', 'biases' to 'biases' (/mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/test1/uut_top.cpp:13:2)
+INFO: [HLS 214-248] Applying array_partition to 'mult': Complete partitioning on dimension 1. (/mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/firmware/nnet_utils/nnet_conv2d.h:227:32)
+INFO: [HLS 214-248] Applying array_partition to 'acc': Complete partitioning on dimension 1. (/mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/firmware/nnet_utils/nnet_conv2d.h:228:32)
+INFO: [HLS 214-248] Applying array_partition to 'biases': Complete partitioning on dimension 1. (/mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/test1/uut_top.cpp:10:0)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 336.89 seconds. CPU system time: 28.56 seconds. Elapsed time: 365.46 seconds; current allocated memory: 1.187 GB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 1.187 GB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 1.72 seconds. CPU system time: 0.11 seconds. Elapsed time: 1.82 seconds; current allocated memory: 1.297 GB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 2.17 seconds. CPU system time: 0 seconds. Elapsed time: 2.18 seconds; current allocated memory: 1.297 GB.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 2.84 seconds. CPU system time: 0.11 seconds. Elapsed time: 2.95 seconds; current allocated memory: 1.465 GB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 3.45 seconds. CPU system time: 0.05 seconds. Elapsed time: 3.51 seconds; current allocated memory: 1.553 GB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'uut_top' ...
+WARNING: [SYN 201-103] Legalizing function name 'conv_2d_latency_cl<float, float, t_config>' to 'conv_2d_latency_cl_float_float_t_config_s'.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'conv_2d_latency_cl_float_float_t_config_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'conv_2d_latency_cl<float, float, t_config>'.
+WARNING: [HLS 200-885] The II Violation in module 'conv_2d_latency_cl_float_float_t_config_s' (function 'conv_2d_latency_cl<float, float, t_config>'): Unable to schedule 'load' operation ('input_r_load_1', /mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/firmware/nnet_utils/nnet_conv2d.h:273) on array 'input_r' due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array 'input_r'.
+Resolution: For help on HLS 200-885 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-885.html
+WARNING: [HLS 200-885] The II Violation in module 'conv_2d_latency_cl_float_float_t_config_s' (function 'conv_2d_latency_cl<float, float, t_config>'): Unable to schedule 'load' operation ('input_r_load_3', /mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/firmware/nnet_utils/nnet_conv2d.h:273) on array 'input_r' due to limited memory ports (II = 2). Please consider using a memory core with more ports or partitioning the array 'input_r'.
+Resolution: For help on HLS 200-885 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-885.html
+WARNING: [HLS 200-885] The II Violation in module 'conv_2d_latency_cl_float_float_t_config_s' (function 'conv_2d_latency_cl<float, float, t_config>'): Unable to schedule 'load' operation ('input_r_load_5', /mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/firmware/nnet_utils/nnet_conv2d.h:273) on array 'input_r' due to limited memory ports (II = 3). Please consider using a memory core with more ports or partitioning the array 'input_r'.
+Resolution: For help on HLS 200-885 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-885.html
+WARNING: [HLS 200-885] The II Violation in module 'conv_2d_latency_cl_float_float_t_config_s' (function 'conv_2d_latency_cl<float, float, t_config>'): Unable to schedule 'load' operation ('input_r_load_7', /mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/firmware/nnet_utils/nnet_conv2d.h:273) on array 'input_r' due to limited memory ports (II = 4). Please consider using a memory core with more ports or partitioning the array 'input_r'.
+Resolution: For help on HLS 200-885 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-885.html
+WARNING: [HLS 200-885] The II Violation in module 'conv_2d_latency_cl_float_float_t_config_s' (function 'conv_2d_latency_cl<float, float, t_config>'): Unable to schedule 'load' operation ('input_r_load_238', /mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/firmware/nnet_utils/nnet_conv2d.h:273) on array 'input_r' due to limited memory ports (II = 130). Please consider using a memory core with more ports or partitioning the array 'input_r'.
+Resolution: For help on HLS 200-885 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-885.html

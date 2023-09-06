@@ -2,11 +2,12 @@
 # Vivado v2022.2 (64-bit)
 # SW Build 3671981 on Fri Oct 14 04:59:54 MDT 2022
 # IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
-# Start of session at: Tue Sep  5 14:29:38 2023
-# Process ID: 7066
+# Start of session at: Mon Sep  4 21:11:18 2023
+# Process ID: 7593
 # Current directory: /mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls
 # Command line: vivado -mode batch -source vivado_power.tcl
 # Log file: /mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/vivado.log
 # Journal file: /mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/vivado.jou
-# Running On: xacc-head-000-5.csl.illinois.edu, OS: Linux, CPU Frequency: 2100.000 MHz, CPU Physical cores: 16, Host memory: 361158 MB
+# Running On: xacc-head-000-5.csl.illinois.edu, OS: Linux, CPU Frequency: 2100.000 MHz, CPU Physical cores: 17, Host memory: 361158 MB
 #-----------------------------------------------------------
+source vivado_power.tcl

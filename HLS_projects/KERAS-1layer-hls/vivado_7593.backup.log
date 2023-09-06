@@ -1,0 +1,52 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 04:59:54 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Mon Sep  4 21:11:18 2023
+# Process ID: 7593
+# Current directory: /mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls
+# Command line: vivado -mode batch -source vivado_power.tcl
+# Log file: /mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/vivado.log
+# Journal file: /mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/vivado.jou
+# Running On: xacc-head-000-5.csl.illinois.edu, OS: Linux, CPU Frequency: 2100.000 MHz, CPU Physical cores: 17, Host memory: 361158 MB
+#-----------------------------------------------------------
+source vivado_power.tcl
+# set project_path "./test1/conv2d_project.prj/sol/impl/verilog/project.xpr"
+# open_project $project_path
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/test1/conv2d_project.prj/sol/impl/ip'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/xilinx/vitis/v2022p2/Vivado/2022.2/data/ip'.
+open_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2116.941 ; gain = 156.250 ; free physical = 66632 ; free virtual = 313542
+# open_run  synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xcu280-fsvh2892-2L-e
+INFO: [Device 21-403] Loading part xcu280-fsvh2892-2L-e
+INFO: [Project 1-454] Reading design checkpoint '/mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/test1/conv2d_project.prj/sol/impl/verilog/project.gen/sources_1/bd/bd_0/ip/bd_0_hls_inst_0/bd_0_hls_inst_0.dcp' for cell 'bd_0_i/hls_inst'
+Netlist sorting complete. Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 3744.238 ; gain = 0.000 ; free physical = 67812 ; free virtual = 314717
+INFO: [Netlist 29-17] Analyzing 685 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2022.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/test1/conv2d_project.prj/sol/impl/verilog/uut_top.xdc]
+Finished Parsing XDC File [/mnt/shared/home/tz32/models/HLS_projects/KERAS-1layer-hls/test1/conv2d_project.prj/sol/impl/verilog/uut_top.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.04 . Memory (MB): peak = 4079.953 ; gain = 0.000 ; free physical = 66250 ; free virtual = 313155
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 160 instances were transformed.
+  DSP48E1 => DSP48E2 (DSP_ALU, DSP_A_B_DATA, DSP_C_DATA, DSP_MULTIPLIER, DSP_M_DATA, DSP_OUTPUT, DSP_PREADD, DSP_PREADD_DATA): 160 instances
+
+open_run: Time (s): cpu = 00:00:53 ; elapsed = 00:00:56 . Memory (MB): peak = 4079.953 ; gain = 1963.012 ; free physical = 66251 ; free virtual = 313156
+# report_power -file power_report.pwr
+Command: report_power -file power_report.pwr
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Running Vector-less Activity Propagation...
+WARNING: [Timing 38-242] The property HD.CLK_SRC of clock port "ap_clk" is not set. In out-of-context mode, this prevents timing estimation for clock delay/skew
+Resolution: Set the HD.CLK_SRC property of the out-of-context port to the location of the clock buffer instance in the top-level design
+
+Finished Running Vector-less Activity Propagation
+1 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+report_power: Time (s): cpu = 00:04:18 ; elapsed = 00:02:15 . Memory (MB): peak = 6299.051 ; gain = 2219.098 ; free physical = 65659 ; free virtual = 312565
+INFO: [Common 17-206] Exiting Vivado at Mon Sep  4 21:14:43 2023...

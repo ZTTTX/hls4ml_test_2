@@ -12,10 +12,10 @@ POWER_FILE="$BASE_DIR/power_report.pwr"
 # Array of values for the parameters
 in_height_values=(32 64 128)
 in_width_values=(32 64 128)
-n_chan_values=(2)
+n_chan_values=(2 4)
 filt_height_values=(2 4)
 filt_width_values=(2 4)
-n_filt_values=(2)
+n_filt_values=(2 4)
 out_height_values=(10)
 out_width_values=(10)
 
@@ -75,39 +75,41 @@ EOL
                                 echo "======================="
                                 echo "NOW RUNNING inH${in_height}_inW${in_width}_nChan${n_chan}_fH${filt_height}_fW${filt_width}_nFilt${n_filt}_outH${out_height}_outW${out_width}"
                                 echo "======================="
-
-                                cd "$TEST_DIR"
-                                vitis_hls -f run_hls.tcl
-
                                 BASE_FILENAME="uut_top_csynth_inH${in_height}_inW${in_width}_nChan${n_chan}_fH${filt_height}_fW${filt_width}_nFilt${n_filt}_outH${out_height}_outW${out_width}"
-
-                                # Navigate back
-                                cd "$BASE_DIR"
-
-                                # Check if report file exists
-                                if [ -f "$REPORT_FILE" ]; then
-                                    # Copy and rename the report file
-                                    cp "$REPORT_FILE" "$RESULTS_DIR/${BASE_FILENAME}.xml"
+                                if test -f $RESULTS_DIR/${BASE_FILENAME}.xml
+                                then  #Have data to collect
+                                    echo "RUN SKIP"
                                 else
-                                    echo "ERROR: $REPORT_FILE does not exist!"
-                                fi
+                                    cd "$TEST_DIR"
+                                    vitis_hls -f run_hls.tcl
 
-                                if [ -f "$REPORT_FILE_RPT" ]; then
-                                    # Copy and rename the RPT report file
-                                    cp "$REPORT_FILE_RPT" "$RESULTS_DIR/${BASE_FILENAME}.rpt"
-                                else
-                                    echo "ERROR: $REPORT_FILE_RPT does not exist!"
-                                fi
-                                
-                                vivado -mode batch -source vivado_power.tcl
+                                    # Navigate back
+                                    cd "$BASE_DIR"
 
-                                if [ -f "$POWER_FILE" ]; then
-                                    # Copy and rename the RPT report file
-                                    cp "$POWER_FILE" "$RESULTS_DIR/${BASE_FILENAME}.pwr"
-                                else
-                                    echo "ERROR: $POWER_FILE does not exist!"
-                                fi
+                                    # Check if report file exists
+                                    if [ -f "$REPORT_FILE" ]; then
+                                        # Copy and rename the report file
+                                        cp "$REPORT_FILE" "$RESULTS_DIR/${BASE_FILENAME}.xml"
+                                    else
+                                        echo "ERROR: $REPORT_FILE does not exist!"
+                                    fi
 
+                                    if [ -f "$REPORT_FILE_RPT" ]; then
+                                        # Copy and rename the RPT report file
+                                        cp "$REPORT_FILE_RPT" "$RESULTS_DIR/${BASE_FILENAME}.rpt"
+                                    else
+                                        echo "ERROR: $REPORT_FILE_RPT does not exist!"
+                                    fi
+                                    
+                                    vivado -mode batch -source vivado_power.tcl
+
+                                    if [ -f "$POWER_FILE" ]; then
+                                        # Copy and rename the RPT report file
+                                        cp "$POWER_FILE" "$RESULTS_DIR/${BASE_FILENAME}.pwr"
+                                    else
+                                        echo "ERROR: $POWER_FILE does not exist!"
+                                    fi
+                                fi
                                 echo "======================="
                                 echo "RUN DONE FOR inH${in_height}_inW${in_width}_nChan${n_chan}_fH${filt_height}_fW${filt_width}_nFilt${n_filt}_outH${out_height}_outW${out_width}"
                                 echo "======================="
